@@ -1,6 +1,6 @@
-# ECE-DEVOPS
+# ECE-Devops
 
-# The Project
+## The Project
 
 This is the repository of the first devops lab. This lab is about creating a simple git repository in which we will create a basic web server that would return "Hello World!" when trying to connect to it.
 

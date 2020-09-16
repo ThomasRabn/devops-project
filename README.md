@@ -17,9 +17,9 @@ To install this project you can:
 ## Usage Instructions
 
 When the main folder is installed, you can open it in a terminal and use one of the following commands to launch it.
-'''js
+```js
 npm start
 # or
 npm run start
-'''
+```
 A local web server listening to the port 3000 will then be up. It will return 'Hello World!' when someone tries to connect to it.

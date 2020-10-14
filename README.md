@@ -1,4 +1,9 @@
-# User API
+# ECE Devops Labs
 
-Basic NodeJS web application
- efe
+## The Repository
+
+This repository is made to always contain the last Devops Lab.
+
+## Author
+
+Thomas RABIAN - thomas.rabian@edu.ece.fr

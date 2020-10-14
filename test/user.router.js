@@ -75,7 +75,7 @@ describe('User REST API', () => {
         .send(user)
         .then((res) => {
           chai.request(app)
-            .get('/sergkudinov')
+            .get('/user/sergkudinov')
             .then((res) => {
                 chai.expect(res).to.have.status(200)
                 chai.expect(res.body.user).to.deep.equal(user)

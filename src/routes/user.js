@@ -21,7 +21,7 @@ userRouter
       return resp.status(201).json(respObj)
     })
   })
-  .get('/:username', (req, resp) => { // Express URL params - https://expressjs.com/en/guide/routing.html
+  .get('/user/:username', (req, resp) => { // Express URL params - https://expressjs.com/en/guide/routing.html
     const username = req.params.username
     userController.get(username, (err, res) => {
       let respObj

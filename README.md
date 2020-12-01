@@ -34,7 +34,7 @@ npm test
 
 Finally, it will write the status of the tests on Github so that other users can instantly know if the version that is on the master branch has passed or failed the tests.
 
-## Continuous Deployment (CD)
+### Continuous Deployment (CD)
 
 For the Continuous Deployment part, we decided to use __Heroku__. We chose Heroku because it seemed to be the most used and the biggest name of the Continuous Deployment services. This part is at the end of our CI/CD pipe. Indeed, if Travis CI is done testing the application and all the tests have passed, it will automatically deploy the project on the Heroku app. The last deployed version should be available here: https://my-devops-application.herokuapp.com/.
 As Redis is a Heroku add-on, and as we need to enter our credit card information to have access to it, it is not possible to use Redis on the Heroku app. However, the welcome page works so we can assume that the application would work if we add the Redis add-on.

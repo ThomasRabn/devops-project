@@ -8,3 +8,11 @@ script:
 - npm install
 - echo 'Testing'
 - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: FoYN/fZ4KjnJyZaKdxGs8CoybWvHkhAQXA+wnu09F31QfVg8QhFg+iYO+5z+hYgRP1Yr5p66s8wH8PfBucYDvskkINyUYixvw4GHC32EhY1f/vrMg1yXAKC5imnsQblKHY5B4KnG3ak0fbf/5EuPRrj+LQo7vGCcJP7FkzkCTSdLHetdSKZaj0ikvr+2dVdhRQqdjSLJ5CEaB/t4YEAQ1y6LkCkWp5ZwDlgpIgJne+z+42vUTC8JhNA4gQtG9sz+kVTZRV333Tp1I9VAxfzchMBJVbp8MgGHIFdmVMt0teYUxB/9Uh8HP711HFydgsPVJFy2e2ZviPcveGb0gTsdQDbpyecTdV/7y7CSmGy882LbPgFXDBajd9J/iQBE/8umikF8tBHHq/IdPebCz3awMYsbayuBoyVzZUQhAglIkKX7VhOa/6Pb2XmGcHnM2n0e+QQ7JK9/y4fTSDuam0M8trn3OevyIZLWBTein/JxPOTd+kRhj15USdSb43Pnc1XwhmFKv8gq8CeK8xglvNqloJpyaHcCa0fUy+FfBrU6DhFd36kbe3JuovhlFttesujGO0y3qG+FeS2lfPW8hAVr/qqdB7CpbAevuszS0z8D4olg2wzGdXyGxEM845PzTUT7gaE+noFWqq9RCsC39mM1Qg9it6K67KjynB+hd6cHdgE=
+  app: ece-devops-labs
+  on:
+    repo: ThomasRabn/ece-devops-labs
+  skip_cleanup: 'true'

@@ -2,7 +2,24 @@
 
 All noteable changes on this repository will be written in this file.
 
-## 0.0.1 - Get off to a healty start - 2020-10-14
+## 0.0.2 - Continuous Deployment - 2020-12-01
 
 ### Added
-- .travis.yml : Allows us to use Travis CI and to automatically test our project
+
+- Continuous Deployment implemented.
+- Pipe from Travis CI to Heroku working.
+- Automatic deployment on Heroku when pushing to Github: https://my-devops-application.herokuapp.com/.
+
+## 0.0.1 - Continuous Integration - 2020-10-14
+
+### Added
+
+- API fonctionnalities fully working.
+- Unit tests are operational.
+- `.travis.yml` : Allows us to use Travis CI and to automatically test our project.
+
+## 0.0.0 - Start - 2020-09-14
+
+### Added
+
+- Create a HTTP web server using Node.js & Express.

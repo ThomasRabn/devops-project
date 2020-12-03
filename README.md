@@ -1,6 +1,7 @@
 # ECE Devops Labs - PROJECT
 
-Devops Project - Thomas RABIAN - thomas.rabian@edu.ece.fr
+Devops Project
+Thomas RABIAN - thomas.rabian@edu.ece.fr
 
 ## The Repository
 

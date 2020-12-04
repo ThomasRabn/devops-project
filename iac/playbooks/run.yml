@@ -1,0 +1,14 @@
+---
+- hosts: application_server
+  # Run commands as root
+  become: true
+  # Roles to be executed on these hosts
+  roles:
+  - role: install/gitnoderedis
+    tags: install
+
+  - role: install/app
+    tags: install
+
+  - role: healthchecks
+    tags: healthchecks

@@ -1,2 +1,8 @@
+# Node modules
 node_modules
+
+# Database dump
 dump.rdb
+
+# Vagrant VM
+.vagrant/

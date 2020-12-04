@@ -1,0 +1,36 @@
+---
+- name: Launch Redis server
+  command: redis-server --daemonize yes
+
+- name: Launch application tests
+  become: no
+  command: npm test
+  args:
+    chdir: ~/myrepo
+  register: tests_value
+
+- name: Print tests output
+  debug:
+    msg: "{{ tests_value.stdout.split('\n') }}"
+
+- name: Launch Node application on port 3000
+  become: no
+  command: pm2 start npm -- start
+  args:
+    chdir: ~/myrepo
+
+- name: Check the application status
+  uri:
+    url: http://127.0.0.1:3000
+    return_content: yes
+  register: application_health
+
+- name: Print application status
+  debug:
+    msg: "{{ application_health }}"
+
+
+- name: Print information
+  debug:
+    msg: "You can access the API from the host on 20.20.20.2:3000"
+  when: application_health.status == 200 and application_health.content == "Hello World!"

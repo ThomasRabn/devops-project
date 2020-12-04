@@ -1,0 +1,20 @@
+---
+- name: Clone the private repository into ~/myrepo
+  become: no
+  git:
+    repo: git@github.com:ThomasRabn/ece-devops-labs.git
+    dest: ~/myrepo
+    version: master
+    accept_hostkey: yes
+
+- name: Install Node daemon to run it in background
+  become: yes
+  command: npm install pm2 -g
+  args:
+    chdir: /home/vagrant/myrepo
+
+- name: Install Node modules of the project
+  become: no
+  command: npm install
+  args:
+    chdir: ~/myrepo

@@ -74,3 +74,7 @@ Before all our applications, we need to install our project's modules. For this,
 ### Launching the tests, launching the app and checking its status
 
 After we have installed everything, we need to start our servers. First, we need to start the redis-server's database. As we cannot have a process that would stop our flow, we need to daemonize it using the command `redis-server --daemonize yes`. We then launch the application tests using `npm test` and we print the response on the output. We can then start the application using `pm2 start npm -- start` which will launch npm start in the background. We then check its status by going to `127.0.0.1:3000` on the VM and we return it. Finally, we tell the user if the application is running properly, and if it does we tell him that he can access it on his computer on the address `20.20.20.2:3000`.
+
+## Build Docker image of your application
+
+Create a Docker image of our application was fairly easy. In fact, our Dockerfile is very simple, it just needs to pull the Nodejs image from DockerHub, copy the files that are in the current directory, launch `npm install` to build the application and expose the port. We can then push this image to DockerHub and we are done!

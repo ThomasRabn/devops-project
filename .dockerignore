@@ -1,0 +1,17 @@
+# Vagrant folder
+iac
+
+# Travis CI
+.travis.yml
+
+# Git files
+.git
+.gitignore
+*.md
+
+# Node modules
+node_modules
+
+# Docker
+.dockerignore
+Dockerfile

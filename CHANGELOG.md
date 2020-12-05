@@ -2,6 +2,12 @@
 
 All noteable changes on this repository will be written in this file.
 
+## 0.0.3 - Docker image - 2020-12-07
+
+### Added
+
+- Dockerfile to build a Docker image of our application
+
 ## 0.0.2 - Continuous Deployment - 2020-12-01
 
 ### Added

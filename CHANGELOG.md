@@ -2,6 +2,12 @@
 
 All noteable changes on this repository will be written in this file.
 
+## 0.0.4 - Docker Compose - 2020-12-07
+
+### Added
+
+- Container orchestration with Docker Compose: launch & start our application automatically
+
 ## 0.0.3 - Docker image - 2020-12-07
 
 ### Added

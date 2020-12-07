@@ -77,4 +77,8 @@ After we have installed everything, we need to start our servers. First, we need
 
 ## Build Docker image of your application
 
-Create a Docker image of our application was fairly easy. In fact, our Dockerfile is very simple, it just needs to pull the Nodejs image from DockerHub, copy the files that are in the current directory, launch `npm install` to build the application and expose the port. We can then push this image to DockerHub and we are done!
+Create a Docker image of our application was fairly easy. In fact, our Dockerfile is very simple, it just needs to pull the Nodejs image from DockerHub, copy the files that are in the current directory, launch `npm install` to build the application and expose the port. We can then push this image to DockerHub and we are done! You can find our Docker image [here](https://hub.docker.com/repository/docker/thomasrabn/devops-project-app)!
+
+## Make container orchestration using Docker Compose
+
+This part took a lot more time than the last one. We faced a lot of problems that were not visible: when rebuilding our application, the files copied were actually not replaced which caused a lot of problems (because we were not pulling our image). This was not too hard when we understood that, but we lost a lot of time. In the end, we have a fully working Docker Compose file that launches 2 containers: our application and Nodejs in one and Redis in the other. First, it launches `npm test` and then `npm start` which helps to make sure that there are no problem.

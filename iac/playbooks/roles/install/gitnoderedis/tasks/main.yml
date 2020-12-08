@@ -47,16 +47,6 @@ m+evNMBiAjIS1gHdwCdOAAAAEnNlcmdlaUBhZGFsdGFzLmNvbQECAw==
     dest: ~/.ssh/id_ed25519.pub
 
 # ----------------------- TRUCS A TEJ ---------------------- #
-# - name: Touching a hosts doc
-#   become: no
-#   file: 
-#     path: ~/.ssh/known_hosts
-#     state: touch
-#     mode: '0777'
-
-# - name: Adding Github as a known host
-#   become: no
-#   shell: 'ssh-keyscan -H github.com >> ~/.ssh/authorized_keys'
 
 # - name: Enable HTTP+HTTPS access
 #   firewalld:

@@ -7,6 +7,8 @@ services:
   
   web:
     image: "thomasrabn/devops-project-app"
+    # We override the default command so that we launch npm test before npm start
+    command:  ["sh", "-c", "npm test && npm start"]
     ports:
       - "3000:3000"
     depends_on:
@@ -15,5 +17,3 @@ services:
       - REDIS_URL=redis
     links:
       - redis
-    command:
-      sh -c "npm test && npm start"

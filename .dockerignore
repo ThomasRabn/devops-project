@@ -15,3 +15,9 @@ node_modules
 # Docker
 .dockerignore
 Dockerfile
+
+# Docker compose
+docker-compose.yml
+
+# Kubernetes
+k8s

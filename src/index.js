@@ -19,8 +19,6 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.use('/user', userRouter)
 
-app.get('/user/:username', userRouter)
-
 const server = app.listen(port, (err) => {
   if (err) throw err
   console.log("Server listening the port " + port)

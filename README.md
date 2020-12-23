@@ -96,7 +96,7 @@ All the file are in the `k8s` folder.
 
 - #### Deployment
 
-  The deployment script is in the `deployment.yml` file. The deployment name is called `deployment-devops-app`, and it runs our application image and a redis image. Each image is run in a different container, but both containers are part of the same pod. Because they are in the same pod and because their useful ports are exposed, they can communicate and exchange data. Also, redis container's `/data` folder is linked to the persistent volume claim that we implemented so that we can save the data on the host. We also overrides the default Redis' container command with a command that activates the `appendonly` storage to persist data.
+  The deployment script is in the `deployment.yml` file. The deployment name is called `deployment-devops-app`, and it runs our application image and a redis image. Each image is run in a different container, but both containers are part of the same pod. Because they are in the same pod and because their useful ports are exposed, they can communicate and exchange data. Also, redis container's `/data` folder is linked to the persistent volume claim that we implemented so that we can save the data on the host. We also overrides the default Redis' container command with a command that activates the `appendonly` storage to persist data. By default, Redis uses a `dump.rdb` file to save the data to the disk, but we decided to look for an other method and it seems that it is a safer storage method (but the output file is bigger).
 
 - #### Service
 
@@ -108,7 +108,7 @@ All the file are in the `k8s` folder.
 
 ### Istio
 
-// TODO
+  Istio has been a tough challenge. We did our best to use Istio to dynamically route requests and to gradually migrate the traffic from one application version another. However, even after following all the tutorials given in the lab a second time, we did not succeed in this task and we sadly do not have anything to show with Istio.
 
 ### Source Control Management - Git <img height="18.72" alt="git" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"/>
 
@@ -121,6 +121,13 @@ Since the end of November with the `WebTech Project`, we tried to improve our Gi
 3. Merging our branch into master
 
 Finally, we have learned a lot about Git and we have put policies to have a cleaner and better repository.
+
+## Bonus
+
+- Better API
+- More tests
+- Alpine
+- Vagrant SSH
 
 ## Authors :student: :man_student:
 

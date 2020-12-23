@@ -24,5 +24,9 @@ const server = app.listen(port, (err) => {
   console.log("Server listening the port " + port)
 })
 
+process.on('SIGINT', function() {
+  console.log( "\nGracefully shutting down from SIGINT (Ctrl-C)" )
+  process.exit(1)
+})
 
 module.exports = server

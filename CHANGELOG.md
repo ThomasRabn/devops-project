@@ -2,6 +2,24 @@
 
 All noteable changes on this repository will be written in this file.
 
+## [0.1.0] - 2020-12-23
+
+### Modified
+
+- **[readme]** - Usage added, some modifications
+
+## [0.0.9] - 2020-12-22
+
+### Added
+
+- **[application]** - New API functionnalities.
+- **[tests]** - Tests for new API functionnalities are operationnal.
+
+### Modified
+
+- **[IaC]** - Vagrant modified so that it works with synchronized folders by default.
+- **[readme]** - Tasks well explained.
+
 ## [0.0.8] - 2020-12-21
 
 ### Modified
@@ -67,7 +85,7 @@ All noteable changes on this repository will be written in this file.
 
 ### Modified
 
-- **[application]** API fonctionnalities fully working.
+- **[application]** - API fonctionnalities fully working.
 
 ## [0.0.0] - 2020-09-14 - Start
 

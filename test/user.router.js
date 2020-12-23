@@ -21,6 +21,7 @@ describe('User REST API', () => {
     client.flushdb()
   });
 
+  /***** CREATE A USER *****/
   describe('POST /user', () => {
 
     it('create a new user', (done) => {
@@ -62,62 +63,9 @@ describe('User REST API', () => {
         })
     })
 
-    it('modify a user', (done) => {
-      const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergggeir',
-        lastname: 'Kudiiiiinov'
-      }
-      const userModified = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
-      }
-      chai.request(app)
-        .post('/user')
-        .send(user)
-        .then((res) => {
-          chai.request(app)
-            .post('/user/sergkudinov')
-            .send(userModified)
-            .then((res) => {
-              chai.request(app)
-                .get('/user/sergkudinov')
-                .then((res) => {
-                  chai.expect(res).to.have.status(200)
-                  chai.expect(res.body.user).to.deep.equal(userModified)
-                  chai.expect(res.body.err).to.be.equal(null)
-                  done()
-                })
-            })
-        })
-        .catch((err) => {
-          throw err
-        })
-    })
-
-    it('modify a non-existing user', (done) => {
-      const user = {
-        username: 'sergkudinov',
-        firstname: 'Sergei',
-        lastname: 'Kudinov'
-      }
-      chai.request(app)
-        .post('/user/sergkudinov')
-        .send(user)
-        .then((res) => {
-          chai.expect(res).to.have.status(400)
-          chai.expect(res.body.status).to.be.equal('error')
-          chai.expect(res.body.msg).to.be.equal('User does not exist')
-          done()
-        })
-        .catch((err) => {
-          throw err
-        })
-    })
-
   })
 
+  /***** READ A USER *****/
   describe('GET /user', () => {
 
     it('get an existing user', (done) => {
@@ -198,6 +146,66 @@ describe('User REST API', () => {
 
   })
 
+  /***** UPDATE A USER *****/
+  describe('PUT /user', () => {
+
+    it('modify a user', (done) => {
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergggeir',
+        lastname: 'Kudiiiiinov'
+      }
+      const userModified = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      }
+      chai.request(app)
+        .post('/user')
+        .send(user)
+        .then((res) => {
+          chai.request(app)
+            .put('/user/sergkudinov')
+            .send(userModified)
+            .then((res) => {
+              chai.request(app)
+                .get('/user/sergkudinov')
+                .then((res) => {
+                  chai.expect(res).to.have.status(200)
+                  chai.expect(res.body.user).to.deep.equal(userModified)
+                  chai.expect(res.body.err).to.be.equal(null)
+                  done()
+                })
+            })
+        })
+        .catch((err) => {
+          throw err
+        })
+    })
+
+    it('modify a non-existing user', (done) => {
+      const user = {
+        username: 'sergkudinov',
+        firstname: 'Sergei',
+        lastname: 'Kudinov'
+      }
+      chai.request(app)
+        .put('/user/sergkudinov')
+        .send(user)
+        .then((res) => {
+          chai.expect(res).to.have.status(400)
+          chai.expect(res.body.status).to.be.equal('error')
+          chai.expect(res.body.msg).to.be.equal('User does not exist')
+          done()
+        })
+        .catch((err) => {
+          throw err
+        })
+    })
+
+  })
+
+  /***** DELETE A USER *****/
   describe('DELETE /user', () => {
 
     it('delete an existing user', (done) => {

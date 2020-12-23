@@ -18,23 +18,3 @@
 - name: Install Node.js
   yum:
     name: nodejs
-
-# --------------- GITHUB AND REPO KEYS --------------- #
-
-# - name: Copy OpenSSH private key
-#   become: no
-#   copy:
-#     content: '-----BEGIN OPENSSH PRIVATE KEY-----
-# b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
-# QyNTUxOQAAACBviea+H9tIn0dEob0dj4ABcJvnrzTAYgIyEtYB3cAnTgAAAJhNEe3DTRHt
-# wwAAAAtzc2gtZWQyNTUxOQAAACBviea+H9tIn0dEob0dj4ABcJvnrzTAYgIyEtYB3cAnTg
-# AAAEDW9R5/mZdVGZ0KYpbRB+atUgKp57moLojM1DVZTMBWXG+J5r4f20ifR0ShvR2PgAFw
-# m+evNMBiAjIS1gHdwCdOAAAAEnNlcmdlaUBhZGFsdGFzLmNvbQECAw==
-# -----END OPENSSH PRIVATE KEY-----'
-#     dest: ~/.ssh/id_ed25519
-
-# - name: Copy .pub file
-#   become: no
-#   copy:
-#     content: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG+J5r4f20ifR0ShvR2PgAFwm+evNMBiAjIS1gHdwCdO sergei@adaltas.com'
-#     dest: ~/.ssh/id_ed25519.pub

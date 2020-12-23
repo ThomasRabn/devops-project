@@ -4,7 +4,6 @@ services:
     image: "redis:alpine"
     expose:
       - 6379
-  
   web:
     image: "thomasrabn/devops-project-app"
     # We override the default command so that we launch npm test before npm start

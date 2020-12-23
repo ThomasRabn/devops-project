@@ -21,6 +21,7 @@ userRouter
       return resp.status(201).json(respObj)
     })
   })
+  // Get all users
   .get('/', (req, resp) => {
     userController.getAll((err, res) => {
       let respObj
@@ -40,6 +41,7 @@ userRouter
       }
     })
   })
+  // Get a user
   .get('/:username', (req, resp) => { // Express URL params - https://expressjs.com/en/guide/routing.html
     const username = req.params.username
     userController.get(username, (err, res) => {
@@ -58,7 +60,8 @@ userRouter
       resp.status(200).json(respObj)
     })
   })
-  .post('/:username', (req, resp) => {
+  // Modify a user
+  .put('/:username', (req, resp) => {
     const username = req.params.username
     userController.modify(username, req.body, (err, res) => {
       let respObj
@@ -76,6 +79,7 @@ userRouter
       return resp.status(200).json(respObj)
     })
   })
+  // Delete a user
   .delete('/:username', (req, resp) => {
     const username = req.params.username
     userController.delete(username, (err, res) => {

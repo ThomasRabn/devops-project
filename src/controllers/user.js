@@ -36,7 +36,7 @@ module.exports = {
   getAll: (callback) => {
     client.keys("*", (err,res) => {
       if(err || res == null ) {
-        return callback(err, null) 
+        return callback(err, null)
       }  else {
         return callback(null, res)
       }

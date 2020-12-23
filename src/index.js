@@ -3,6 +3,7 @@ const userRouter = require('./routes/user')
 const bodyParser = require('body-parser')
 
 const app = express()
+const path = require('path');
 const port = process.env.PORT || 3000
 
 const client = require('./dbClient')
@@ -15,7 +16,21 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/',function(req,res){
+  res.sendFile(path.join(__dirname + '/index.html'))
+})
+
+app.get('/setname',function(req,res){
+  res.sendFile(path.join(__dirname + '/setName.html'))
+})
+
+app.get('/getuser',function(req,res){
+  res.sendFile(path.join(__dirname + '/getuser.html'))
+})
+
+app.get('/modifyuser',function(req,res){
+  res.sendFile(path.join(__dirname + '/modifyuser.html'))
+})
 
 app.use('/user', userRouter)
 

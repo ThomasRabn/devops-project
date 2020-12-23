@@ -1,0 +1,28 @@
+<html>
+<script type="text/javascript">
+  function getUser () {
+    var action = '/user/' + document.getElementById('username').value
+    console.log(action)
+    document.getElementById("form_1").action = action;
+  }
+</script>
+<body>
+  <div>
+  <div>
+    <h3>Wich user do you want to see</h3>
+    <form id="form_1" method='GET'>
+      <div>
+        <input id="username" type="text" class="form-control" placeholder="username">
+      </div>
+        <button type="submit" onclick="getUser()">Get user</button>
+    </form>
+    <form action="/user" method='GET'>
+         <button type="submit">Get all</button>
+    </form>
+ 		</div>
+    <form action="/" method='GET'>
+        <button type="submit">Home</button>
+    </form>
+ </div>
+</body>
+</html>

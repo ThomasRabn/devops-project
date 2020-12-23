@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
     # Use SSH Agent Forwarding
     config.ssh.forward_agent = true
 
+    # Sync  the folder
+    config.vm.synced_folder "../", "/home/vagrant/myrepo", type: "rsync", rsync__exclude: ["iac/", "docker-compose.yml", "k8s/", ".*", "*.md", "Dockerfile", "node_modules"]
+
     # Define the application VM
     config.vm.define "application_server" do |server|
         # Specify the Vagrant box to use

@@ -17,19 +17,19 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 app.get('/',function(req,res){
-  res.sendFile(path.join(__dirname + '/index.html'))
+  res.sendFile(path.join(__dirname + '/views/index.html'))
 })
 
 app.get('/setname',function(req,res){
-  res.sendFile(path.join(__dirname + '/setName.html'))
+  res.sendFile(path.join(__dirname + '/views/setName.html'))
 })
 
 app.get('/getuser',function(req,res){
-  res.sendFile(path.join(__dirname + '/getuser.html'))
+  res.sendFile(path.join(__dirname + '/views/getuser.html'))
 })
 
 app.get('/modifyuser',function(req,res){
-  res.sendFile(path.join(__dirname + '/modifyuser.html'))
+  res.sendFile(path.join(__dirname + '/views/modifyuser.html'))
 })
 
 app.use('/user', userRouter)

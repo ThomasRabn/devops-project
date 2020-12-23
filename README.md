@@ -19,6 +19,7 @@ First of all, it is needed to create a web application. It is asked that we shou
 - tests: unit, API, configuration, connection.
 
 For this, we took the draft application located in the [assets/userapi](https://github.com/adaltas/ece-devops-2020-fall/tree/master/modules/4-continuous-testing/assets/userapi) folder and modified it in order to have a better API. The functionnalities are:
+
 - Create:
   - Adding a user by POST on `/user`
 - Read:
@@ -28,6 +29,8 @@ For this, we took the draft application located in the [assets/userapi](https://
   - Modify a user by PUT on `/user/:username`
 - Delete:
   - Delete a user by DELETE on `/user/:username`
+
+We also added some front-end pages to simplify the use of the API.
 
 ### 2. The Continuous Integration / Continuous Deployment (CI/CD)
 
@@ -150,11 +153,15 @@ Finally, we have learned a lot about Git and we have put policies to have a clea
 
   More API functionnalities lead to more tests to put in place. We did our best to add multiple tests for each functionnality and we have a total of 25 tests.
 
-- #### C. Usage of host SSH key for Vagrant
+- #### C. Basic front-end for our API
+
+  Because it is not convenient to use Postman to test the API, we added some HTML pages to test the functionnalities without the need to use anything else.
+
+- #### D. Usage of host SSH key for Vagrant
 
   Because we think that synchronizing a folder is not the best method, we implemented, at first, a method to pull the application from the GitHub repository. For this, we tell Vagrant to use the host machine SSH authorizations to try and pull the repository. We tried it and it worked on our computers. To test it, you need to comment the line 17 (synchronized folder) of the Vagrantfile, and uncomment the task "_Clone the private repository into ~/myrepo_" in `iac/playbooks/roles/install/app/tasks/main.yml`.
 
-- #### D. Docker images size
+- #### E. Docker images size
 
   That is not really a bonus, however we thought it would be interesting to talk about it here. For our Docker images, we used _Linux Alping_ images. Alpine is a Linux distribution that is much smaller than usual Linux distributions. It allows us to have very slight Docker images.
 
@@ -238,7 +245,7 @@ In both ways, the application will be accessible on [`localhost:3000`](http://lo
 Docker Compose is very easy and will launch 2 containers: one with the application and an other one with Redis. When launching the Docker Compose file, we are prompted with the results of the tests and the server is launched. Here is how you can launch the Docker Compose file from the root of the project:
 
 ```bash
-docker compose up
+docker-compose up
 ```
 
 You will then be able to access the application on [`localhost:3000`](http://localhost:3000).
@@ -264,6 +271,8 @@ It will launch the 4 files in the `k8s/` folder, which will create:
   - 1 PV and 1 PVC allowing to store Redis' data on the cluster
 
 By going to `<minikube-ip>:30003`, you will be able to access the application.
+
+**`Note!`** It might happen that the application container will be ready before the Redis container which may cause issues. If you face the `HMSET not found`, make sure to relaunch the deployment.
 
 ## Useful links :link:
 

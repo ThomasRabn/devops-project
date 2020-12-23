@@ -2,11 +2,15 @@
 
 All noteable changes on this repository will be written in this file.
 
-## [0.1.0] - 2020-12-23
+## [1.0.0] - 2020-12-23 - Project final version
+
+### Added
+
+- **[application]** - Simple front-end to verify API's functionnalities.
 
 ### Modified
 
-- **[readme]** - Usage added, some modifications
+- **[readme]** - Usage added, some modifications.
 
 ## [0.0.9] - 2020-12-22
 

@@ -33,4 +33,4 @@
 - name: Print information
   debug:
     msg: "You can access the API from the host on 20.20.20.2:3000"
-  when: application_health.status == 200 and application_health.content == "Hello World!"
+  when: application_health.status == 200
